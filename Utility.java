@@ -8,7 +8,6 @@ import java.lang.*;
  * @since 15/12/2018
  *
  */
-
 public class Utility 
 {
 	static Scanner sc=new Scanner(System.in);
@@ -54,7 +53,7 @@ public class Utility
 	}
 	
 	/**
-	 * Aim :- print table of 2^N 
+	 * Aim :-prints a table of the powers of 2 that are less than or equal to 2^N.
 	 * @author admin1
 	 * @version 1.0
 	 * @since 15/12/2018
@@ -126,6 +125,28 @@ public class Utility
 			//System.out.err("Enter positive number = ");
 		}
 	}
-
+	
+	
+/**
+ *Aim :-Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N 
+ * @author admin1
+ * @version 1.0
+ * @since 15/12/2018
+ *
+ */
+	
+	public static void getHarmonicNumberSeries()
+	{
+		System.out.print("Enter number to print harmonic series upto it =");
+		int num=sc.nextInt();
+		float sum=0;
+		System.out.println("!!!!!!!! harmonic series !!!!!!!!!    ");
+		for(int i=1;i<=num;i++)
+		{
+			sum=sum+(float)1/i;
+			System.out.println("         "+sum);
+		}
+		
+	}
 }
 
