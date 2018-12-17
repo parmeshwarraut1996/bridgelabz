@@ -1,13 +1,12 @@
 package com.bridgelabz.functionprogram;
+
 import com.utility.Utility;
 
-public class PrintTable 
-{
+public class ReplaceUName {
 
 	public static void main(String[] args) 
 	{
-		Utility.printTable();
-		
+		Utility.replaceUserName();
 		// TODO Auto-generated method stub
 
 	}

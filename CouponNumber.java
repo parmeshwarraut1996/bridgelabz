@@ -1,11 +1,14 @@
 package com.bridgelabz.functionprogram;
+//import java.util.Scanner;
 import com.utility.Utility;
 
-public class LeapYear {
+public class CouponNumber {
 
 	public static void main(String[] args)
 	{
-		Utility.leapYear();
+		
+	   	Utility.getCouponNumber();
+	   
 		// TODO Auto-generated method stub
 
 	}

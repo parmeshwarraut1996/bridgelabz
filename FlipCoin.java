@@ -1,5 +1,4 @@
-package com.bridgelabz.FunctionProg;
-
+package com.bridgelabz.functionprogram;
 import com.utility.Utility;
 
 public class FlipCoin {
