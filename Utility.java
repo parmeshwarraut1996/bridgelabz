@@ -1,8 +1,11 @@
 package com.utility;
 import java.util.Scanner;
+import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.PrintWriter;
+import java.io.OutputStreamWriter;
 public class Utility
 {
 	static Scanner sc=new Scanner(System.in);
@@ -259,43 +262,118 @@ public class Utility
  * @since 17/12/2018
  */
 		
-		public static void getCouponNumber()
-		{ 
-			/*int i,j;
-			boolean b=false;
-			for(i=0;i<=arr.length;i++)
-			{
-				for(j=0;j<=i;j++)
-				{
-					arr[j]=(int)Math.random();
-					if(arr[i]==arr[j])
-					{
-						b=true;
-						break;
-						
-					}
-	
-				}
-				if(!b)
-				{
-					System.out.println(arr[i]);
-				}
+		public static void getCouponNumber(int num)
+		{
 				
-				
-				
-			}*/
+			List<Integer> numbers = new ArrayList<Integer>();
+		    int n=num; 
+		    Random random = new Random();
+		 
+		    do
+		    {
+		    	int next = random.nextInt(n);
+		        if (!numbers.contains(next))
+		        {
+		        	numbers.add(next);
+		            System.out.print("  "+next);
+		        }
+		        
+		    }while (numbers.size()<n);
 			
-			//Random r=new Random();
-			  ArrayList<Integer> list = new ArrayList<Integer>();
+			 /* ArrayList<Integer> list = new ArrayList<Integer>();
 		        for (int i=1; i<11; i++) {
 		            list.add(new Integer(i));
 		        }
 		        Collections.shuffle(list);
 		        for (int i=0; i<10; i++) {
 		            System.out.println(list.get(i));
-				
+				*/
 			
-		}}
+			
+		}
+
+		
+		public static void printTwoDArray()
+		{
+			int r=3;
+			int c=3;
+			int[][] arr1=new int[r][c];
+			OutputStreamWriter ow=new OutputStreamWriter(System.out);
+			PrintWriter pw=new PrintWriter(ow);
+			for(int j=0;j<=3;j++)
+			{
+				for(int k=0;k<=3;k++)
+				{
+					pw.print(arr1[j][k]);
+				}
+					
+			}
+				
+						
+	
+	
+		}
+
+		public static void sumOfTriplets(int arr[],int n) 
+		{
+			int count=0;
+			for(int i=0;i<n-2;i++)
+			{
+				for(int j=i+1;j<n-1;j++)
+				{
+					for(int k=j+1;k<n;k++)
+					{
+						if(arr[i]+arr[j]+arr[k]==0)
+						{
+							count++;
+							System.out.println("Triplates are="+arr[i]+" "+arr[j]+" "+arr[k]);
+						}
+					}
+				}
+			}
+			System.out.println("No of distinct triplates="+count);
+			
+		}
+
+	
+		public static void calculateDistance(int x, int y)
+		{		
+			System.out.println("Points (x,y)are="+"("+x+","+y+")");
+			double distance=Math.sqrt(x*x+y*y);
+			System.out.println("Euclidean Distance"+"("+x+","+y+")"+" to (0,0)="+distance);
+		}
+
+		public static void permutationOfString(String str,int r,int len) 
+		{
+			if(r==len)
+			{
+				System.out.println(str);
+			}
+			else
+			{
+				for(int i=r;i<=len;i++)
+				{
+					str=swap(str,r,i);
+					permutationOfString(str,r+1,len);
+					str=swap(str,r,i);
+						
+				}
+				
+			}
+			
+			
+		}
+		public static String swap(String s,int i,int j)
+		{
+			char temp;
+			char[] charArray=s.toCharArray();
+			temp=charArray[i];
+			charArray[i]=charArray[j];
+			charArray[j]=temp;
+			return String.valueOf(charArray);
+		}
+		
+		
 }			
 			
 			
