@@ -6,6 +6,7 @@ const prompt = readline.createInterface(
     });
 
 var utility = require('./utility.js');
+function replaceName(){
 prompt.question('Enter string:', (str) => 
 {
     console.log("String is:-" + str);
@@ -18,3 +19,4 @@ prompt.question('Enter string:', (str) =>
         })
     })
 });
+}replaceName();

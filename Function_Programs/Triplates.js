@@ -7,7 +7,7 @@ const userinput = readline.createInterface(
 
     });
 var utility = require('./utility.js');
-input();
+
 function input() {
     userinput.question("How nany elements enter ", function (n) {
         addValues(n);
@@ -39,4 +39,4 @@ function addValues(n) {
 
 
 
-}
+} input();

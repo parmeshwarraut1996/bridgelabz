@@ -6,9 +6,10 @@ const prompt = readline.createInterface(
     });
 
 var utility = require('./utility.js');
-
+function primeFact(){
 prompt.question("Enter number to find prime factors= ", (num) => 
 {
     utility.calculatePrimeFactor(num);;
 
 });
+}primeFact();

@@ -1,10 +1,13 @@
+var util = require('util');
 module.exports = {
+
     /**
      * Aim:-User   Input   and   Replace   String   Template   “Hello   <<UserName>>,   How   are   you?”
      * @author Parmeshwar Raut
      * @version v10.11.0
      * @since 20/12/2018
      */
+
     replaceUserName(str, str1, str2) {
         var res = str.replace(str1, str2);
         console.log("After Replace user name:-" + res);
@@ -100,20 +103,18 @@ module.exports = {
     * @since 20/12/2018
     */
 
-    printHarmonicSeries() {
-        rl.question("Enter number to print harmonic series up to it:", (num) => {
-            var sum = 0;
-            console.log("!!!!!! Harmonic Series !!!!!!");
+    printHarmonicSeries(num) {
 
-            for (var i = 1; i <= num; i++) {
-                sum = sum + (1 / i);
-                console.log("1/" + i + "+" + "\t");
-
-            }
-            console.log("sum=" + sum);
+        var sum = 0;
+        console.log("!!!!!! Harmonic Series !!!!!!");
+        for (var i = 1; i <= num; i++) {
+            util.print("1/" + i + "+");
+            sum = sum + (1 / i);
+        }
+        console.log("=" + sum);
 
 
-        });
+
     },
 
     /**
@@ -193,26 +194,25 @@ module.exports = {
 
 
     generateCoupon(num) {
-        var count=0;
-        var randomCount=0;
+        var count = 0;
+        var randomCount = 0;
         var arr = new Array(num);
-        while(count<num)
-        {
-            var r =Math.round(Math.random() * 100);
+        while (count < num) {
+            var r = Math.round(Math.random() * 100);
             randomCount++;
             console.log(r);
             for (var i = 0; i < arr.length; i++) {
-                if(arr[i]!=r&&  r > 0) {
-                    arr[i]=parseInt(r);
+                if (arr[i] != r && r > 0) {
+                    arr[i] = parseInt(r);
                     count++;
                 }
             }
         }
-        console.log("Random number are = "+randomCount);
-        
-       // console.log(arr);
-        
-        
+        console.log("Random number are = " + randomCount);
+
+        // console.log(arr);
+
+
 
 
     },
@@ -225,26 +225,150 @@ module.exports = {
    * @version v10.11.0
    * @since 21/12/2018
    */
-    additionOsNumsZero(n,arr) {
-        var count=0;
-        for(var i=0;i<n-2;i++)
-        {
-            for(var j=i+1;j<n-1;j++)
-            {
-                for(var k=j+1;k<n;k++)
-                {
-                    if(arr[i]+arr[j]+arr[k]==0)
-                    {
+    additionOsNumsZero(n, arr) {
+        var count = 0;
+        for (var i = 0; i < n - 2; i++) {
+            for (var j = i + 1; j < n - 1; j++) {
+                for (var k = j + 1; k < n; k++) {
+                    if (arr[i] + arr[j] + arr[k] == 0) {
                         count++;
-                        console.log("Triplets are= "+arr[i]+","+arr[j]+","+arr[k]);
-                        
+                        console.log("Triplets are= " + arr[i] + "," + arr[j] + "," + arr[k]);
+
                     }
                 }
             }
 
         }
-        console.log(count);
-        
+        console.log("NUmber of tripltes" + count);
+
+
+    },
+
+    /**
+  * Aim:Write   a   program     Distance    that   takes   two   integer   command­line   arguments   x
+        and   y   and   prints   the   Euclidean   distance   from   the   point   (x,   y)   to   the   origin   (0,   0).   The
+        formulae   to   calculate   distance   =   sqrt(x*x   +   y*y).   Use   Math.power   function
+  * @author Parmeshwar Raut
+  * @version v10.11.0
+  * @since 22/12/2018
+  */
+
+    calculateDistance(x, y) {
+
+        x = +process.argv[2];
+        y = +process.argv[3];
+        console.log("Points (x,y) are =" + "(" + x + "," + y + ")");
+        var distance = Math.pow(Math.sqrt(x * x + y * y), 1);
+        console.log("Euclidean Distance =" + distance);
+
+
+    },
+
+    /**
+  * Aim:Write   static   functions   to   return   all   permutation   of   a   String   using   iterative   method   and
+        Recursion   method.   Check   if   the   arrays   returned   by   two   string   functions   are   equal.
+  * @author Parmeshwar Raut
+  * @version v10.11.0
+  * @since 22/12/2018
+  */
+
+    obtainPermutation(str) {
+        var len = str.length;
+        var str2 = " ";
+        recursion(str2, str);
+
+        function recursion(str2, str) {
+            if (str.length == 0) {
+                console.log(str2);
+                str2 = " ";
+            }
+            for (var i = 0; i < str.length; i++) {
+                recursion(str2 + str.charAt(i), str.substring(0, i) + str.substring(i + 1, str.length));
+            }
+        }
+
+
+    },
+
+    /**
+* Aim:Write   a   Stopwatch   Program   for   measuring   the   time   that   elapses   between
+      the   start   and   end   clicks
+* @author Parmeshwar Raut
+* @version v10.11.0
+* @since 22/12/2018
+*/
+
+    time() {
+        var d = new Date();
+        t = d.getTime()
+        return t;
+    },
+    elapsedTime(start, stop) {
+        var elapsed = stop - start;
+        return elapsed;
+
+    },
+
+
+
+    /**
+  * Aim:Write a program to find the roots of the equation a*x*x+b*x+c.Since the equation is x*x, hence there are 2 roots.The 2 roots of the equation
+        can be found using a formula.
+        delta=b*b-4*a*c.
+        Root 1 of x=(­b+sqrt(delta))/(2*a)
+        Root 2 of x=(­b-sqrt(delta))/(2*a)
+        Take a,b and c as input values to find the roots of x.
+  * @author Parmeshwar Raut
+  * @version v10.11.0
+  * @since 22/12/2018
+  */
+
+
+    calculateRoots(a, b, c) {
+        var delta = 0;
+        delta = b * b - 4 * a * c;
+        console.log("Delta = " + delta);
+        var root1 = 0;
+        var root2 = 0;
+
+        root1 = (-b + Math.sqrt(delta)) / (2 * a);
+        root2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+        console.log("Root 1 of X = " + root1);
+        console.log("Root 2 of X = ", +root2);
+
+
+
+    },
+
+    /**
+    * Aim:Write   a   program     WindChill  that   takes   two   double   command­line   arguments   t
+          and   v   and   prints   the   wind   chill.   Use   Math.pow(a,   b)   to   compute   ab.
+          Given   the   temperature   t   (in   Fahrenheit)   and   the   wind   speed   v   (in   miles   per   hour),
+          the National   Weather   Service   defines   the   effective   temperature   (the   wind   chill)  to be:
+          Note  :   the   formula   is   not   valid   if   t   is   larger   than   50   in   absolute   value   or   if   v   is   larger
+          than   120   or   less   than   3   (you   may   assume   that   the   values   you   get   are   in   that   range).
+    * @author Parmeshwar Raut
+    * @version v10.11.0
+    * @since 22/12/2018
+    */
+
+
+    calculateWindChill(t, v) {
+        t = +process.argv[2];
+        v = +process.argv[3];
+        if (t < 50 || (v > 120 && v < 3)) {
+            var s = Math.pow(v, 0.16);
+            var w = 35.75 + 0.6215 * t + (0.4275 * t - 35.75) * s;
+            console.log("Temperature = " + t);
+            console.log("Wind Speed = " + v);
+            console.log("Wind Chill = " + w);
+        }
+        else {
+            console.log("Enter proper value t is less than 50 OR v is less than 120 and greater than 3");
+
+        }
+
 
     }
 };

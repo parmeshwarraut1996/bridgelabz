@@ -6,7 +6,8 @@ const prompt = readline.createInterface(
     });
 
 var utility = require('./utility.js');
-
+function gambler()
+{
 prompt.question("Enter stake value= ", (stake) => 
 {
     prompt.question("Enter Goal value= ", (g) => 
@@ -17,3 +18,5 @@ prompt.question("Enter stake value= ", (stake) =>
         })
     })
 });
+}
+gambler();

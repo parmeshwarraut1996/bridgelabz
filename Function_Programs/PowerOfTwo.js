@@ -4,7 +4,8 @@ const prompt = readline.createInterface(
         input: process.stdin,
         output: process.stdout
     });
-
-var utility = require('./utility.js');
-utility.calculatePowerOfTwo()
-
+var num;
+function powerOfTwo() {
+    var utility = require('./utility.js');
+    utility.calculatePowerOfTwo(num)
+} powerOfTwo();

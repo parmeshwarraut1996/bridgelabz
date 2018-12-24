@@ -6,9 +6,11 @@ const prompt = readline.createInterface(
     });
 
 var utility = require('./utility.js');
-
+ function couponNum(){
 prompt.question("Enter how many coupon you want= ",(num)=>
 {
    utility.generateCoupon(num);
 
 });
+}
+couponNum();
