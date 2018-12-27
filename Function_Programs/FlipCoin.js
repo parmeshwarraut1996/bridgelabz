@@ -10,7 +10,7 @@ var utility = require('./utility.js');
 var arr;
 
 function add() {
-  prompt.question("how many times you want flip coin", (size) => {
+  prompt.question("how many times you want flip coin = ", (size) => {
     utility.getPercentageOfFlipCoin(size);
 
   }

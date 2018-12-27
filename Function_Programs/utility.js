@@ -1,16 +1,26 @@
 var util = require('util');
 module.exports = {
+    /******************************************************************************
+     *  Execution       :   1. default node         cmd> node ReplaceUName.js 
+     *                      2. if nodemon installed cmd> nodemon ReplaceUName.js
+     * 
+     *  Purpose         : Replace string template   
+     * 
+     *  @description    
+     * 
+     *  @file           : ReplaceUName.js
+     *  @overview       : ReplaceUName module to replace one string template by new string.
+     *  @module         : ReplaceUName - This is optional if expeclictly its an npm or local package
+     *  @author         : Parmeshwar Raut
+     *  @version        : 1.0
+     *  @since          : 20-12-2018
+     *
+     ******************************************************************************/
 
-    /**
-     * Aim:-User   Input   and   Replace   String   Template   “Hello   <<UserName>>,   How   are   you?”
-     * @author Parmeshwar Raut
-     * @version v10.11.0
-     * @since 20/12/2018
-     */
 
     replaceUserName(str, str1, str2) {
-        var res = str.replace(str1, str2);
-        console.log("After Replace user name:-" + res);
+        var res = str.replace(str1, str2);//replace string str1 by str2 in string res
+        console.log("After Replace user name:-" + res);//display modified string
 
 
     },
@@ -52,13 +62,22 @@ module.exports = {
         }
 
     },
-
-    /**
-     * Aim:-Leap   Year
-     * @author Parmeshwar Raut
-     * @version v10.11.0
-     * @since 20/12/2018
-     */
+    /******************************************************************************
+     *  Execution       :   1. default node         cmd> node LeapYear.js 
+     *                      2. if nodemon installed cmd> nodemon LeapYear.js
+     * 
+     *  Purpose         : Determines whether a year is leap or not.
+     *
+     *  @description    
+     * 
+     *  @file           : LeapYear.js
+     *  @overview       : LeapYear module to check whether user given year is leap or not.
+     *  @module         : LeapYear - This is optional if expeclictly its an npm or local package
+     *  @author         : BridgeLabz <bridgeit@bridgeit>
+     *  @version        : 1.0
+     *  @since          : 20-12-2018
+     *
+     ******************************************************************************/
 
     checkLeapYear(year) {
 
@@ -70,24 +89,30 @@ module.exports = {
         }
 
     },
-
-    /**
-     * Aim:-This   program   takes   a   command­line   argument   N   and   prints   a   table   of   the
-            powers   of   2   that   are   less   than   or   equal   to   2^N.
-     * @author Parmeshwar Raut
-     * @version v10.11.0
-     * @since 20/12/2018
-     */
-
-    calculatePowerOfTwo(num) {
-        n = +process.argv[2];
-
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> node PowerOfTwo.js 
+ *                      2. if nodemon installed cmd> nodemon PowerOfTwo.js
+ * 
+ *  Purpose         : This   program   takes   a   command­line   argument   N   and   prints   a   table   of   the
+                      powers   of   2   that   are   less   than   or   equal   to   2^N.
+ * 
+ *  @description    
+ * 
+ *  @file           : PowerOfTwo.js
+ *  @overview       : PowerOfTwo module to print table of 2^N.
+ *  @module         : PowerOfTwo - This is optional if expeclictly its an npm or local package
+ *  @author         : BridgeLabz <bridgeit@bridgeit>
+ *  @version        : 1.0
+ *  @since          : 20-12-2018
+ *
+ ******************************************************************************/
+    calculatePowerOfTwo(N) {
         var i = 1;
         var powerOfTwo = 1;
 
-        while (i <= n) {
+        while (i <= N) {
             console.log(i + " " + powerOfTwo);
-            powerOfTwo = 2 * powerOfTwo;
+            powerOfTwo = 2 * powerOfTwo;//calculate power of 2 till 2^N
             i = i + 1;
 
         }
@@ -95,37 +120,55 @@ module.exports = {
 
     },
 
-
-    /**
-    * Aim:- Prints   the   Nth   harmonic   number:   1/1   +   1/2   +   ...   +   1/N
-    * @author Parmeshwar Raut
-    * @version v10.11.0
-    * @since 20/12/2018
-    */
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> node Harmonic.js 
+ *                      2. if nodemon installed cmd> nodemon Harmonic.js
+ * 
+ *  Purpose         :   Prints the Nth harmonic numbers: 1/1+1/2+...+1/N
+ * 
+ *  @description    
+ * 
+ *  @file           : Harmonic.js
+ *  @overview       : Harmonic module to compute 1/1+1/2+1/3+...+1/N
+ *  @module         : Harmonic - This is optional if expeclictly its an npm or local package
+ *  @author         : BridgeLabz <bridgeit@bridgeit>
+ *  @version        : 1.0
+ *  @since          : 20-12-2018
+ *
+ ******************************************************************************/
 
     printHarmonicSeries(num) {
 
         var sum = 0;
         console.log("!!!!!! Harmonic Series !!!!!!");
         for (var i = 1; i <= num; i++) {
-            util.print("1/" + i + "+");
-            sum = sum + (1 / i);
+            util.print("1/" + i + "+");//display harmonic series using util.print method
+            sum = sum + (1 / i);//compute sum of harmonic series upto given number
         }
         console.log("=" + sum);
 
 
 
     },
-
-    /**
-    * Aim:-Computes   the   prime   factorization   of   N   using   brute   force.
-    * @author Parmeshwar Raut
-    * @version v10.11.0
-    * @since 21/12/2018
-    */
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> node PrimeFactor.js 
+ *                      2. if nodemon installed cmd> nodemon PrimeFactor.js
+ * 
+ *  Purpose         : Compute prime factors of user given number.   
+ * 
+ *  @description    
+ * 
+ *  @file           : PrimeFactor.js
+ *  @overview       : PrimeFactor module to compute prime factors of user given number.
+ *  @module         : PrimeFactor - This is optional if expeclictly its an npm or local package
+ *  @author         : BridgeLabz <bridgeit@bridgeit>
+ *  @version        : 1.0
+ *  @since          : 21-12-2018
+ *
+ ******************************************************************************/
     calculatePrimeFactor(num) {
-        while (num % 2 == 0) {
-            console.log("Prime Factors are= " + 2);
+        while (num % 2 == 0) {                      
+            console.log("Prime Factors are= " + 2);  
             num /= 2;
         }
         for (var i = 3; i * i <= num; i++) {
@@ -183,14 +226,22 @@ module.exports = {
 
     },
 
-
-    /**
-   * Aim:Given   N   distinct   Coupon   Numbers,   how   many   random   numbers   do   you
-         need   to   generate   distinct   coupon   number?   This   program   simulates   this   random process.
-   * @author Parmeshwar Raut
-   * @version v10.11.0
-   * @since 21/12/2018
-   */
+    /******************************************************************************
+     *  Execution       :   1. default node         cmd> node Coupon.js 
+     *                      2. if nodemon installed cmd> nodemon Coupon.js
+     * 
+     *  Purpose         : Genrate distinct Coupon numbers  
+     * 
+     *  @description    
+     * 
+     *  @file           : Coupon.js
+     *  @overview       : Coupon module to generate distinct coupon numbers.
+     *  @module         : Coupon - This is optional if expeclictly its an npm or local package
+     *  @author         : BridgeLabz <bridgeit@bridgeit>
+     *  @version        : 1.0
+     *  @since          : 21-12-2018
+     *
+     ******************************************************************************/
 
 
     generateCoupon(num) {
@@ -216,8 +267,37 @@ module.exports = {
 
 
     },
+    /**
+  * Aim:A library   for   reading   in   2D   arrays   of   integers,   doubles,   or   booleans   from
+        standard   input   and   printing   them   out   to   standard   output.
+  * @author Parmeshwar Raut
+  * @version v10.11.0
+  * @since 21/12/2018
+  */
 
+    printIntegerArray(arr, start, size) {
+        var util = require('util');
+        var i = start, j = size;
+        // To print Integer 2D array
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length; j++) {
+                util.print(arr[i][j] + '  ');
+            }
+            console.log();
+        }
+    },
 
+    printDoubleArray(arr, start, size) {
+        var util = require('util');
+        var i = start, j = size;
+        // To print Integer 2D array
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length; j++) {
+                util.print(arr[i][j] + '  ');
+            }
+            console.log();
+        }
+    },
     /**
    * Aim:A   program   with   cubic   running   time.   Read   in   N   integers   and   counts   the
          number   of   triples   that   sum   to   exactly   0
@@ -244,21 +324,31 @@ module.exports = {
 
     },
 
-    /**
-  * Aim:Write   a   program     Distance    that   takes   two   integer   command­line   arguments   x
-        and   y   and   prints   the   Euclidean   distance   from   the   point   (x,   y)   to   the   origin   (0,   0).   The
-        formulae   to   calculate   distance   =   sqrt(x*x   +   y*y).   Use   Math.power   function
-  * @author Parmeshwar Raut
-  * @version v10.11.0
-  * @since 22/12/2018
-  */
+    /******************************************************************************
+ *  Execution       :   1. default node         cmd> node Distance.js 
+ *                      2. if nodemon installed cmd> nodemon Distance.js
+ * 
+ *  Purpose         :  Distance    that   takes   two   integer   command­line   arguments   x
+                       and   y   and  prints   the   Euclidean   distance   from   the   point   (x,   y)   to   the   origin   (0,   0).   The
+                       formulae   to   calculate   distance   =   sqrt(x*x   +   y*y).   Use   Math.power   function
+ * 
+ *  @description    
+ * 
+ *  @file           : Distance.js
+ *  @overview       : Distance module to calculate distance from origin to (x,y).
+ *  @module         : Distance - This is optional if expeclictly its an npm or local package
+ *  @author         : BridgeLabz <bridgeit@bridgeit>
+ *  @version        : 1.0
+ *  @since          : 20-12-2018
+ *
+ ******************************************************************************/
 
     calculateDistance(x, y) {
 
-        x = +process.argv[2];
-        y = +process.argv[3];
+        x = +process.argv[2];//get command line argument x
+        y = +process.argv[3];//get command line argument y
         console.log("Points (x,y) are =" + "(" + x + "," + y + ")");
-        var distance = Math.pow(Math.sqrt(x * x + y * y), 1);
+        var distance = Math.pow(Math.sqrt(x * x + y * y), 1);//calculate distance
         console.log("Euclidean Distance =" + distance);
 
 
